@@ -1,4 +1,5 @@
 cherry.js-doc
 =============
 
-documents for cherry.js
+- Documents for cherry.js
+- for more infos, visit the home website: http://cherryjs.com
