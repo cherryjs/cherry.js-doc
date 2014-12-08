@@ -3,7 +3,7 @@
  *============================================*/
 
 body {
-  font: 400 1em/1.8 Avenir,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei','Microsoft Sans Serif',sans-serif;
+  font: 400 1em/1.4 Avenir,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei','Microsoft Sans Serif',sans-serif;
 }
 
 .wrapper {
@@ -17,8 +17,7 @@ a:link {
   color: #333;
 }
 a:visited { color: #333;}
-a:hover { color: #aaa; }
-a:active { color: #aaa; }
+a:hover { text-decoration: underline; }
 
 /*============================================*
  *  header
@@ -42,4 +41,34 @@ a:active { color: #aaa; }
 
 .site-header a:link {
   margin: 0 0 0 20px;
+}
+
+/*============================================*
+ *  content
+ *============================================*/
+
+.page-content {
+  position: relative;
+}
+
+/*============================================*
+ *  sidebar
+ *============================================*/
+
+#sidebar {
+  border-right: 1px solid #aaa;
+  width: 180px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*============================================*
+ *  doc-content
+ *============================================*/
+
+#content-container {
+  position: absolute;
+  left: 220px;
+  top: 0;
+  width: 800px;
 }
