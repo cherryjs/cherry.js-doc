@@ -2,28 +2,35 @@
 layout: default
 ---
 
-  <div id="sidebar">
-    <p>
-      <b>Object.prototype</b>
-      <ul>
-        <li>$equal</li>
-        <li>$at</li>
-        <li>$...</li>
-      </ul>
-    </p>
-    <p>
-      <b>Array.prototype</b>
-      <ul>
-        <li>$equal</li>
-        <li>$swap</li>
-        <li>$...</li>
-      </ul>
-    </p>
-  </div>
-
-<div id="content-container">
-
-  <div id="doc-content">
-  </div>
-
+<div id="sidebar">
+  <p>
+    <b>Object.prototype</b>
+    <ul>
+      <li>$at</li>
+      <li>$debug</li>
+      <li>$equal</li>
+    </ul>
+  </p>
+  <p>
+    <b>Array.prototype</b>
+    <ul>
+      <li>$equal</li>
+      <li>$swap</li>
+    </ul>
+  </p>
+  <p>
+    <b>String.prototype</b>
+    <ul>
+      <li>$trim</li>
+      <li>$removeSpace</li>
+    </ul>
+  </p>
 </div>
+
+
+<div id="doc-content">
+  {% include object.html %}
+  {% include array.html %}
+  {% include string.html %}
+</div>
+

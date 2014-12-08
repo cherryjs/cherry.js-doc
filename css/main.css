@@ -56,19 +56,28 @@ a:hover { text-decoration: underline; }
  *============================================*/
 
 #sidebar {
-  border-right: 1px solid #aaa;
+  font-size: 14px;
   width: 180px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+#sidebar ul {
+  margin: 10px 0;
 }
 
 /*============================================*
  *  doc-content
  *============================================*/
 
-#content-container {
+#doc-content {
+  border-left: 1px solid #aaa;
+  font-size: 14px;
   position: absolute;
-  left: 220px;
+  padding: 0 0 0 40px;
+  left: 180px;
   top: 0;
-  width: 800px;
+  width: 780px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
