@@ -1,40 +1,40 @@
 <h2>Object.prototype</h2>
 
-<h3>Object.at(arr)</h3>
+<h3>Object.$at(arr)</h3>
 
-<p>Object.at(arr) can tell you if the object is in the array .</p>
+<p>Object.$at(arr) can tell you if the object is in the array .</p>
 
 <pre>
-J(function(){
+$C(function(){
   var arr = [1,2,3,'4'];
   var a = 4;
   var b = '4';
-  console.log(a.at(arr));  //return false;
-  console.log(b.at(arr));  //return true;
+  console.log(a.$at(arr));  //return false;
+  console.log(b.$at(arr));  //return true;
 });
 </pre>
 
-<h3>Object.equal(obj)</h3>
+<h3>Object.$equal(obj)</h3>
 
-<p>Object.equal(obj) will show you if is equal to when Only considering the value.</p>
+<p>Object.$equal(obj) will show you if is equal to when Only considering the value.</p>
 
 <pre>
-J(function(){
+$C(function(){
   var obj_1 = { a:{b:1}, c:[1,2,3] };
   var obj_2 = { a:{b:1}, c:[1,2,3] };
   console.log( obj_1===obj_2 );       //return false;
-  console.log( obj_1.equal(obj_2) );  //return true;
+  console.log( obj_1.$equal(obj_2) );  //return true;
 });
 </pre>
 
-<h3>Object.debug(message)</h3>
+<h3>Object.$debug(message)</h3>
 
-<p>Object.debug(message) make it more easily to debug when developing.</p>
+<p>Object.$debug(message) make it more easily to debug when developing.</p>
 
 <pre>
-J(function(){
+$C(function(){
   var t = 100;
   //...
-  t.debug("t...");  //console print: Debug Message: t..., Value: 100
+  t.$debug("t...");  //console print: Debug Message: t..., Value: 100
 });
 </pre>
