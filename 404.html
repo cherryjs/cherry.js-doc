@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-        <title>Cherry.js Docs</title>
+        <title></title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -71,8 +71,8 @@
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="method/">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -86,64 +86,15 @@
 
         <div class="container">
             
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#use-cherryjs-in-browser">Use cherry.js in browser</a></li>
-        
-    
-        <li class="main "><a href="#use-cherryjs-in-nodejs">Use cherry.js in Node.js</a></li>
-        
-            <li><a href="#install">Install</a></li>
-        
-            <li><a href="#use">Use</a></li>
-        
-    
-    </ul>
-</div></div>
-                <div class="col-md-9" role="main">
 
-<p>Cherry.js is a JavaScript utility library, and it can run on both browser and Node. You can use javascript more easily with cherry.js. The sample follows:</p>
-<h2 id="use-cherryjs-in-browser">Use cherry.js in browser</h2>
-<p>Just include this script for using:</p>
-<pre><code>&lt;script src="./cherry.min.js"&gt;&lt;/script&gt;
-</code></pre>
-<p>And enjoy cherry.js:</p>
-<pre><code>$C(function(){
-    var arr = ['a','b','c','d'];
-    arr.$swap(0,2);
-    console.log(arr); //return ['c','b','a','d'];
+    <div class="row-fluid">
+      <div id="main-content" class="span12">
+        <h1 id="404-page-not-found" style="text-align: center">404</h1>
+        <p style="text-align: center"><strong>Page not found</strong></p>
+      </div>
+    </div>
 
-    var obj_1 = { a:{b:1}, c:[1,2,3] };
-    var obj_2 = { a:{b:1}, c:[1,2,3] };
-    console.log( obj_1===obj_2 );     //return false;
-    console.log( obj_1.$equal(obj_2) );  //return true;
-});
-</code></pre>
-<p>If you don't care about polluting the global namespace, you can:</p>
-<pre><code>$C.bind();
-/*
- * do anything you want with cherry.js
- */
 
-//And when you don't want to use cherry any more, you can call $C('unbind')
-$C.unbind();
-</code></pre>
-<h2 id="use-cherryjs-in-nodejs">Use cherry.js in Node.js</h2>
-<h3 id="install">Install</h3>
-<pre><code>npm install --save-dev cherry.js
-</code></pre>
-<h3 id="use">Use</h3>
-<pre><code>var $C = require('cherry.js');
-
-$C(function(){
-    var arr = ['a','b','c','d'];
-    arr.$swap(0,2);
-    console.log(arr); //return ['c','b','a','d'];
-});
-</code></pre>
-</div>
-            
         </div>
 
         <footer class="col-md-12">
