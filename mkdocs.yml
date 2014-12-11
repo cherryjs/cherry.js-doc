@@ -1,4 +1,4 @@
-site_name: Cherry.js Docs
+site_name: Cherry.js
 pages:
 - [index.md, Home]
 - [method.md, Method]

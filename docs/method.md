@@ -66,3 +66,13 @@
         var str = "hello world ! ! !";
         console.log(str.$removeSpace()); //"helloworld!!!"
     })
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?68cab2fbdae5543f29c5530d630e8be1";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
