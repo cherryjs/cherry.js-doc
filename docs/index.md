@@ -1,6 +1,8 @@
-Cherry.js is a JavaScript utility library, and it can run on both browser and Node. You can use javascript more easily with cherry.js. The sample follows:
+## Cherry.js
 
-## Use cherry.js in browser
+Cherry.js is a JavaScript utility library, and it can run on both browser and Node.
+
+### Use cherry.js in browsers
 
 Just include this script for using:
 
@@ -29,13 +31,13 @@ If you don't care about polluting the global namespace, you can:
     //And when you don't want to use cherry any more, you can call $C('unbind')
     $C.unbind();
 
-## Use cherry.js in Node.js
+### Use cherry.js in Node.js
 
-### Install
+#### Install
 
     npm install --save-dev cherry.js
 
-### Use
+#### Use
 
     var $C = require('cherry.js');
 
