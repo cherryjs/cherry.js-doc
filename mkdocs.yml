@@ -8,4 +8,7 @@ theme_dir: theme/cherry
 
 pages:
 - ['index.md', 'Home']
-- ['method.md', 'Method']
+- ['examples.md', 'Breif Examples']
+- ['method/array.md', 'Methods', 'Array.prototype']
+- ['method/object.md', 'Methods', 'Object.prototype']
+- ['method/string.md', 'Methods', 'String.prototype']
