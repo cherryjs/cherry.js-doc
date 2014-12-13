@@ -1,5 +1,5 @@
-# Array
-## Array.$swap(index1, index2)
+## Array
+### Array.$swap(index1, index2)
 `Array.$swap(index1, index2)` will exchange the positions of these two elements.
 
     $C(function(){
@@ -8,8 +8,24 @@
       console.log(arr);  //[3,2,1];
     });
 
-# Object
-## Object.$clone()
+### Array.$intersect(arr)
+`Array.$intersect(arr)` return an intersection array with [arr].
+
+    $C(function(){
+      var arr = [1, 2, 3];
+      arr.$intersect([3, 2, 4]); //[2, 3]
+    });
+
+### Array.$unite(arr)
+`Array.$intersect(arr)` return an union array with [arr].
+
+    $C(function(){
+      var arr = [1, 2, 3];
+      arr.$unite([2, 4, 1]); //[1, 2, 3, 4]
+    });
+
+## Object
+### Object.$clone()
 `Object.$clone()` will create a duplicate of the caller.
 
     $C(function(){
@@ -19,18 +35,7 @@
       console.log(a.b);  //return 1; because the change on <x> will not affect <a>.
     });
 
-## Object.$at(arr)
-`Object.$at(arr)` can tell you if the object is in the array [arr].
-
-    $C(function(){
-      var arr = [1,2,3,'4'];
-      var a = 4;
-      var b = '4';
-      console.log(a.$at(arr));  //return false;
-      console.log(b.$at(arr));  //return true;
-    });
-
-## Object.$equal(obj)
+### Object.$equal(obj)
 `Object.$equal(obj)` will show you if [this] is equal to [obj] when **Only** considering the value.
     
     $C(function(){
@@ -40,7 +45,7 @@
       console.log( obj_1.$equal(obj_2) );  //return true;
     });
 
-## Object.$debug(message)
+### Object.$debug(message)
 `Object.$debug(message)` make it more easily to debug when developing.
 
     $C(function(){
@@ -49,9 +54,9 @@
       t.$debug("t...");  //console print: Debug Message: t..., Value: 100
     });
 
-# String
+## String
 
-## String.$trim()
+### String.$trim()
 `String.$trim()` will remove the spaces at the beginning and end.
 
     $C(function(){
@@ -59,7 +64,7 @@
         console.log(str.trim()); //"hello world"
     })
 
-## String.$removeSpace()
+### String.$removeSpace()
 `String.$removeSpace()` will remove the spaces between the words.
 
     $C(function(){
