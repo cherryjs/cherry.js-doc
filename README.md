@@ -1,4 +1,4 @@
-cherry.js-doc
+cherry.js Document Site
 =============
 
 - Documents for cherry.js ([repo](https://github.com/cherryjs/cherry.js))
