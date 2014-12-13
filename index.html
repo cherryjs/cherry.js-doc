@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
+        <meta name="description" content="Cherry.js is a JavaScript utility library and it can run on both browser and Node.">
+        <meta name="author" content="Jerry Zou">
+        <link rel="canonical" href="http://cherryjs.com/">
         <link rel="shortcut icon" href="./img/favicon.ico">
 
         <title>Cherry.js</title>
@@ -21,8 +21,6 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
-        
     </head>
 
     <body class="homepage">
@@ -43,7 +41,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Cherry.js</a>
+            <a class="navbar-brand" href="."><img src="./img/cherry_64.png"> Cherry.js</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -54,32 +52,47 @@
                 
                 
                     <li >
-                        <a href="method/">Method</a>
+                        <a href="examples/">Breif Examples</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Methods <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="method/array/">Array.prototype</a>
+                            </li>
+                        
+                            <li >
+                                <a href="method/object/">Object.prototype</a>
+                            </li>
+                        
+                            <li >
+                                <a href="method/string/">String.prototype</a>
+                            </li>
+                        
+                        </ul>
                     </li>
                 
                 
                 </ul>
             
 
-            
-            <!-- Search, Navigation and Repo links -->
+            <!-- Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                
-                
-                <li class="disabled">
-                    <a rel="next" >
-                        <i class="fa fa-arrow-left"></i> Previous
+                <li>
+                    <a href="https://github.com/cherryjs/cherry.js">
+                        <i class="fa fa-github"></i> Cherry.js
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="method/">
-                        Next <i class="fa fa-arrow-right"></i>
+                <li>
+                    <a href="https://github.com/cherryjs/cherry.js-doc">
+                        <i class="fa fa-github"></i> Documents
                     </a>
                 </li>
-                
-                
             </ul>
-            
         </div>
     </div>
 </div>
@@ -89,22 +102,20 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#use-cherryjs-in-browser">Use cherry.js in browser</a></li>
+        <li class="main active"><a href="#cherryjs">Cherry.js</a></li>
         
-    
-        <li class="main "><a href="#use-cherryjs-in-nodejs">Use cherry.js in Node.js</a></li>
+            <li><a href="#use-cherryjs-in-browsers">Use cherry.js in browsers</a></li>
         
-            <li><a href="#install">Install</a></li>
-        
-            <li><a href="#use">Use</a></li>
+            <li><a href="#use-cherryjs-in-nodejs">Use cherry.js in Node.js</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>Cherry.js is a JavaScript utility library, and it can run on both browser and Node. You can use javascript more easily with cherry.js. The sample follows:</p>
-<h2 id="use-cherryjs-in-browser">Use cherry.js in browser</h2>
+<h2 id="cherryjs">Cherry.js</h2>
+<p>Cherry.js is a JavaScript utility library, and it can run on both browser and Node.</p>
+<h3 id="use-cherryjs-in-browsers">Use cherry.js in browsers</h3>
 <p>Just include this script for using:</p>
 <pre><code>&lt;script src="./cherry.min.js"&gt;&lt;/script&gt;
 </code></pre>
@@ -129,11 +140,11 @@
 //And when you don't want to use cherry any more, you can call $C('unbind')
 $C.unbind();
 </code></pre>
-<h2 id="use-cherryjs-in-nodejs">Use cherry.js in Node.js</h2>
-<h3 id="install">Install</h3>
+<h3 id="use-cherryjs-in-nodejs">Use cherry.js in Node.js</h3>
+<h4 id="install">Install</h4>
 <pre><code>npm install --save-dev cherry.js
 </code></pre>
-<h3 id="use">Use</h3>
+<h4 id="use">Use</h4>
 <pre><code>var $C = require('cherry.js');
 
 $C(function(){
@@ -142,24 +153,13 @@ $C(function(){
     console.log(arr); //return ['c','b','a','d'];
 });
 </code></pre>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?68cab2fbdae5543f29c5530d630e8be1";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
 </div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
-            
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Copyright &copy; 2014, Cherry.js | Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
@@ -169,5 +169,23 @@ $C(function(){
         <script src="./js/prettify-1.0.min.js"></script>
         <script src="./js/highlight.pack.js"></script>
         <script src="./js/base.js"></script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?68cab2fbdae5543f29c5530d630e8be1";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-47842677-2', 'auto');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>

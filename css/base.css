@@ -17,6 +17,10 @@ div.col-md-3 {
     padding-left: 0;
 }
 
+div.col-md-9 {
+    padding-bottom: 100px;
+}
+
 div.source-links {
     float: right;
 }
@@ -46,7 +50,7 @@ h2, h3, h4, h5, h6 {
 }
 
 hr {
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #ddd;
 }
 
 pre, .rst-content tt {
@@ -166,4 +170,8 @@ footer {
     .bs-sidebar.affix {
         width: 263px;
     }
+}
+
+.navbar-brand img {
+    height: 18px;
 }
