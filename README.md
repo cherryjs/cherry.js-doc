@@ -1,7 +1,7 @@
 cherry.js-doc
 =============
 
-- Documents for cherry.js
+- Documents for cherry.js ([repo](https://github.com/cherryjs/cherry.js))
 - build by [Mkdocs](http://www.mkdocs.org/)
 - for more infos, visit the home website: http://cherryjs.com
 
