@@ -14,7 +14,7 @@
             {% endif %}
 
             <!-- Main title -->
-            <a class="navbar-brand" href="{{ homepage_url }}">{{ site_name }}</a>
+            <a class="navbar-brand" href="{{ homepage_url }}"><img src="{{ base_url }}/img/cherry_64.png"> {{ site_name }}</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -43,40 +43,19 @@
                 </ul>
             {% endif %}
 
-            {% if include_search or include_next_prev or repo_url %}
-            <!-- Search, Navigation and Repo links -->
+            <!-- Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                {% if include_search %}
                 <li>
-                    <a href="#searchModal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
-                </li>
-                {% endif %}
-                {% if include_next_prev %}
-                <li {% if not previous_page %}class="disabled"{% endif %}>
-                    <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
-                        <i class="fa fa-arrow-left"></i> Previous
+                    <a href="https://github.com/cherryjs/cherry.js">
+                        <i class="fa fa-github"></i> Cherry.js
                     </a>
                 </li>
-                <li {% if not next_page %}class="disabled"{% endif %}>
-                    <a rel="prev" {% if next_page %}href="{{ next_page.url }}"{% endif %}>
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                {% endif %}
-                {% if repo_url %}
                 <li>
-                    <a href="{{ repo_url }}">
-                        {% if repo_name == 'GitHub' %}
-                            <i class="fa fa-github"></i>
-                        {% elif repo_name == 'Bitbucket' %}
-                            <i class="fa fa-bitbucket"></i>
-                        {% endif %}
-                        {{ repo_name }}
+                    <a href="https://github.com/cherryjs/cherry.js-doc">
+                        <i class="fa fa-github"></i> Documents
                     </a>
                 </li>
-                {% endif %}
             </ul>
-            {% endif %}
         </div>
     </div>
 </div>

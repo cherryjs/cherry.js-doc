@@ -1,6 +1,5 @@
 site_name: Cherry.js
 site_url: http://cherryjs.com
-repo_url: https://github.com/cherryjs/cherry.js-doc
 site_description: Cherry.js is a JavaScript utility library and it can run on both browser and Node.
 site_author: Jerry Zou
 
