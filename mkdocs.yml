@@ -4,6 +4,10 @@ repo_url: https://github.com/cherryjs/cherry.js-doc
 site_description: Cherry.js is a JavaScript utility library and it can run on both browser and Node.
 site_author: Jerry Zou
 site_favicon: favicon.ico
+
+theme: mkdocs
+theme_dir: theme/cherry
+
 pages:
-- [index.md, Home]
-- [method.md, Method]
+- ['index.md', 'Home']
+- ['method.md', 'Method']
