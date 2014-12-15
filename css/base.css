@@ -68,7 +68,7 @@ code.code-large, .rst-content tt.code-large {
 code {
     padding: 2px 5px;
     color: #c7254e;
-    background-color: #f9f2f4;
+    background: none;
     font-size: 75%;
 }
 

@@ -9,7 +9,7 @@
         <link rel="canonical" href="http://cherryjs.com/examples/">
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-        <title>Breif Examples - Cherry.js</title>
+        <title>简单的例子 - Cherry.js</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -52,25 +52,48 @@
                 
                 
                     <li class="active">
-                        <a href=".">Breif Examples</a>
+                        <a href=".">简单的例子</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../suggestion">编码建议</a>
                     </li>
                 
                 
                 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Methods <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">详细文档 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             <li >
-                                <a href="../method/array">Array.prototype</a>
+                                <a href="../method/array">Array</a>
                             </li>
                         
                             <li >
-                                <a href="../method/object">Object.prototype</a>
+                                <a href="../method/object">Object</a>
                             </li>
                         
                             <li >
-                                <a href="../method/string">String.prototype</a>
+                                <a href="../method/string">String</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../about">关于作者</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../license">开源协议</a>
                             </li>
                         
                         </ul>
@@ -133,7 +156,7 @@
 
 <h2 id="array">Array</h2>
 <h3 id="arrayswapindex1-index2">Array.$swap(index1, index2)</h3>
-<p><code>Array.$swap(index1, index2)</code> will exchange the positions of these two elements.</p>
+<p>接受两个数组索引作为参数，将this数组中对应的元素进行交换位置，返回值即这个数组本身。</p>
 <pre><code>$C(function(){
   var arr = [1,2,3];
   arr.$swap(0,2);
@@ -141,14 +164,14 @@
 });
 </code></pre>
 <h3 id="arrayintersectarr">Array.$intersect(arr)</h3>
-<p><code>Array.$intersect(arr)</code> return an intersection array with [arr].</p>
+<p>接受一个数组参数，并返回它与这个数组的交集。</p>
 <pre><code>$C(function(){
   var arr = [1, 2, 3];
   arr.$intersect([3, 2, 4]); //[2, 3]
 });
 </code></pre>
 <h3 id="arrayunitearr">Array.$unite(arr)</h3>
-<p><code>Array.$intersect(arr)</code> return an union array with [arr].</p>
+<p>接受一个数组参数，并返回它与这个数组的并集。</p>
 <pre><code>$C(function(){
   var arr = [1, 2, 3];
   arr.$unite([2, 4, 1]); //[1, 2, 3, 4]
@@ -156,7 +179,7 @@
 </code></pre>
 <h2 id="object">Object</h2>
 <h3 id="objectclone">Object.$clone()</h3>
-<p><code>Object.$clone()</code> will create a duplicate of the caller.</p>
+<p>将产生一个该对象的副本，并返回出来。</p>
 <pre><code>$C(function(){
   var a = {b:1};
   var x = a.$clone(); // &lt;x&gt; is a duplicate of &lt;a&gt;
@@ -165,7 +188,7 @@
 });
 </code></pre>
 <h3 id="objectequalobj">Object.$equal(obj)</h3>
-<p><code>Object.$equal(obj)</code> will show you if [this] is equal to [obj] when <strong>Only</strong> considering the value.</p>
+<p>将该对象与obj相比较，如果两者具有相同的属性，并且对应的属性值相同，那么该函数会返回true。</p>
 <pre><code>$C(function(){
   var obj_1 = { a:{b:1}, c:[1,2,3] };
   var obj_2 = { a:{b:1}, c:[1,2,3] };
@@ -174,7 +197,7 @@
 });
 </code></pre>
 <h3 id="objectdebugmessage">Object.$debug(message)</h3>
-<p><code>Object.$debug(message)</code> make it more easily to debug when developing.</p>
+<p>提供了一种使debug更顺畅的方法。</p>
 <pre><code>$C(function(){
   var t = 100;
   //...
@@ -183,14 +206,14 @@
 </code></pre>
 <h2 id="string">String</h2>
 <h3 id="stringtrim">String.$trim()</h3>
-<p><code>String.$trim()</code> will remove the spaces at the beginning and end.</p>
+<p>移除该字符串头尾的空字符。</p>
 <pre><code>$C(function(){
     var str = "     hello world    ";
     console.log(str.trim()); //"hello world"
 })
 </code></pre>
 <h3 id="stringremovespace">String.$removeSpace()</h3>
-<p><code>String.$removeSpace()</code> will remove the spaces between the words.</p>
+<p>移除字符串中所有的空字符。</p>
 <pre><code>$C(function(){
     var str = "hello world ! ! !";
     console.log(str.$removeSpace()); //"helloworld!!!"
@@ -202,7 +225,7 @@
 
         <footer class="col-md-12">
             <hr>
-            <p>Copyright &copy; 2014, Cherry.js | Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Copyright &copy; 2013-2014, Cherry.js | Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
