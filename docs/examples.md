@@ -1,6 +1,6 @@
 ## Array
 ### Array.$swap(index1, index2)
-`Array.$swap(index1, index2)` will exchange the positions of these two elements.
+接受两个数组索引作为参数，将this数组中对应的元素进行交换位置，返回值即这个数组本身。
 
     $C(function(){
       var arr = [1,2,3];
@@ -9,7 +9,7 @@
     });
 
 ### Array.$intersect(arr)
-`Array.$intersect(arr)` return an intersection array with [arr].
+接受一个数组参数，并返回它与这个数组的交集。
 
     $C(function(){
       var arr = [1, 2, 3];
@@ -17,7 +17,7 @@
     });
 
 ### Array.$unite(arr)
-`Array.$intersect(arr)` return an union array with [arr].
+接受一个数组参数，并返回它与这个数组的并集。
 
     $C(function(){
       var arr = [1, 2, 3];
@@ -26,7 +26,7 @@
 
 ## Object
 ### Object.$clone()
-`Object.$clone()` will create a duplicate of the caller.
+将产生一个该对象的副本，并返回出来。
 
     $C(function(){
       var a = {b:1};
@@ -36,7 +36,7 @@
     });
 
 ### Object.$equal(obj)
-`Object.$equal(obj)` will show you if [this] is equal to [obj] when **Only** considering the value.
+将该对象与obj相比较，如果两者具有相同的属性，并且对应的属性值相同，那么该函数会返回true。
     
     $C(function(){
       var obj_1 = { a:{b:1}, c:[1,2,3] };
@@ -46,7 +46,7 @@
     });
 
 ### Object.$debug(message)
-`Object.$debug(message)` make it more easily to debug when developing.
+提供了一种使debug更顺畅的方法。
 
     $C(function(){
       var t = 100;
@@ -57,7 +57,7 @@
 ## String
 
 ### String.$trim()
-`String.$trim()` will remove the spaces at the beginning and end.
+移除该字符串头尾的空字符。
 
     $C(function(){
         var str = "     hello world    ";
@@ -65,7 +65,7 @@
     })
 
 ### String.$removeSpace()
-`String.$removeSpace()` will remove the spaces between the words.
+移除字符串中所有的空字符。
 
     $C(function(){
         var str = "hello world ! ! !";

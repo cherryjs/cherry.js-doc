@@ -7,8 +7,8 @@ theme: mkdocs
 theme_dir: theme/cherry
 
 pages:
-- ['index.md', 'Home']
-- ['examples.md', 'Breif Examples']
-- ['method/array.md', 'Methods', 'Array.prototype']
-- ['method/object.md', 'Methods', 'Object.prototype']
-- ['method/string.md', 'Methods', 'String.prototype']
+- ['index.md']
+- ['examples.md', '简单的例子']
+- ['method/array.md', '详细文档', 'Array']
+- ['method/object.md', '详细文档', 'Object']
+- ['method/string.md', '详细文档', 'String']
