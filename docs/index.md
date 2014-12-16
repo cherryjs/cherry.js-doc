@@ -1,6 +1,6 @@
 ## Cherry.js
 
-Cherry.js 是一个 JavaScript 工具库，同时支持在浏览器端和 Node 环境中使用。
+Cherry.js 是一个基于原型扩展的 JavaScript 工具库，同时支持在浏览器端和 Node 环境中使用。
 
 ### 在浏览器中使用 cherry.js
 

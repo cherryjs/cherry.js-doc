@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
+        <meta name="keywords" content="cherryjs,cherry,JavaScript,utility,underscore">
+        {% if page_description %}<meta name="description" content="{{ page_description }}">
+        {% else %}<meta name="description" content="Cherry.js是一个基于原型扩展的JavaScript工具库，同时支持在浏览器端和Node环境中使用。">
+        {% endif %}
         {% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
         {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
         <link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">
