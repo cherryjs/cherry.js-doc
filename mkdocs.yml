@@ -13,5 +13,5 @@ pages:
 - ['method/array.md', '详细文档', 'Array']
 - ['method/object.md', '详细文档', 'Object']
 - ['method/string.md', '详细文档', 'String']
-- ['about.md', '关于', '关于作者']
+- ['about.md', '关于', '关于Cherry.js']
 - ['license.md', '关于', '开源协议']
