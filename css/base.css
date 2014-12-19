@@ -1,8 +1,7 @@
 body {
     padding-top: 70px;
-    background: url(../img/grid.png) repeat-x;
-    background-attachment: fixed;
     background-color: #f8f8f8;
+    font-family: Avenir,'Hiragino Sans GB','Microsoft Yahei','Microsoft Sans Serif','WenQuanYi Micro Hei',sans-serif !important;
 }
 
 body > div.container {
@@ -38,19 +37,32 @@ div.col-md-9 img {
 
 h1, h2, h3 {
     color: #444;
+    margin: 25px 0 15px;
+}
+
+h4, h5, h6 {
+    margin: 20px 0 10px;
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 42px;
 }
 
 h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 hr {
     border-top: 1px solid #ddd;
+}
+
+p[lang="en"] {
+    text-indent: 0;
+}
+
+p {
+    text-indent: 2em;
 }
 
 pre, .rst-content tt {

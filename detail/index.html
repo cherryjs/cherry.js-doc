@@ -8,10 +8,10 @@
         <meta name="description" content="Cherry.js是一个基于原型扩展的JavaScript工具库，同时支持在浏览器端和Node环境中使用。">
         
         <meta name="author" content="Jerry Zou">
-        <link rel="canonical" href="http://cherryjs.com/suggestion/">
+        <link rel="canonical" href="http://cherryjs.com/detail/">
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-        <title>编码建议 - Cherry.js</title>
+        <title>详说Cherry.js - Cherry.js</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -60,28 +60,7 @@
                 
                 
                     <li class="active">
-                        <a href=".">编码建议</a>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">详细文档 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            <li >
-                                <a href="../method/array">Array</a>
-                            </li>
-                        
-                            <li >
-                                <a href="../method/object">Object</a>
-                            </li>
-                        
-                            <li >
-                                <a href="../method/string">String</a>
-                            </li>
-                        
-                        </ul>
+                        <a href=".">详说Cherry.js</a>
                     </li>
                 
                 
@@ -91,7 +70,7 @@
                         <ul class="dropdown-menu">
                         
                             <li >
-                                <a href="../about">关于Cherry.js</a>
+                                <a href="../about">Cherry.js的诞生</a>
                             </li>
                         
                             <li >
@@ -127,10 +106,88 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#cherryjs">Cherry.js</a></li>
+        
+            <li><a href="#cherryjs_1">Cherry.js的定位与优势</a></li>
+        
+            <li><a href="#cherryjsprototype">Cherry.js如何解决扩展内置对象prototype的一般问题</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h2 id="cherryjs">Cherry.js</h2>
+<p>Cherry.js是一个扩展了内置对象prototype的工具库。但它不同于Prototype.js，它仅仅在JavaScript本身的语言层面上进行扩展，而并不去关心JavaScript以外的东西，比如DOM。</p>
+<h3 id="cherryjs_1">Cherry.js的定位与优势</h3>
+<p>其实在定位上，Cherry.js和underscore想要完成的事情一样，只是去完成了一些“本该放在JavaScript标准中的”常用函数。和其运行环境无关。不管是在前端还是后端（iOS的开发现在也支持使用javascript了），都可以使用Cherry.js或者underscore这样的工具库。那么相比于underscore，Cherry.js的优势是什么呢？</p>
+<p>简单点来说：<strong>Cherry.js可以最大限度地发挥JavaScript原型链的理念。</strong></p>
+<p>拿最容易理解的方法<code>$equal</code>来举个例子，Cherry.js提供了针对Object, String, Array, Number, Boolean, Date, RegExp等内置对象的$equal函数。</p>
+<pre><code>var obj_1 = { a:{b:1}, c:[1,2,3] };
+var obj_2 = { a:{b:1}, c:[1,2,3] };
+console.log( obj_1 === obj_2 );     /* return false; */
+console.log( obj_1.$equal(obj_2) );  /* return true; */
+</code></pre>
+
+<p>用户可以自定义自己的<code>$equal</code>方法。通过JS的原型链，<code>$equal</code>方法显得尤其出色：</p>
+<pre><code>var Person = function(name, age) {
+    this.name = name;
+    this.age = age
+}
+
+Person.prototype.$equal = function(p2) {
+    return this.name === p2.name;
+}
+
+var obj1 = {
+    person: new Person('Bob', 15)
+};
+
+var obj2 = {
+    person: new Person('Bob', 19)
+};
+
+console.log( obj1.$equal(obj2) );
+</code></pre>
+
+<h3 id="cherryjsprototype">Cherry.js如何解决扩展内置对象prototype的一般问题</h3>
+<p>关于该问题最初的讨论来自于 <a href="http://www.zhihu.com/question/26924011">知乎 | 为什么不要直接在Object.prototype上定义方法？</a></p>
+<h4 id="1">问题1: 侵入内置对象，造成维护紊乱</h4>
+<p>由于直接在内置对象的prototype上定义方法，所有用户声明的对象或者变量都会带有这些函数。如果处理得不好，也会给<code>for-in</code>循环带来一些麻烦。</p>
+<pre><code>Object.prototype.sample = function() {};
+var obj = {};
+for (var attr in obj) {
+    ... //可以访问到sample
+}
+</code></pre>
+
+<p><strong>Cherry.js的解决手段：使用<code>defineProperties()</code>来定义方法</strong>，暂时放弃兼容低版本浏览器（比如IE8-，关于浏览器支持的更多信息请参考首页中的列表）。这样就可以防止在<code>for-in</code>循环中被枚举到了。</p>
+<pre><code>Object.prototype.defineProperties({
+    &quot;sample&quot;: {
+        enumerable: false,
+        configurable: false,
+        writable: true,
+        value: ...
+    },
+    ...
+});
+</code></pre>
+
+<p>另外Cherry.js也提供了一种屏蔽机制。只有在<code>$C</code>语句块中才能使用Cherry.js提供的方法。而在<code>$C</code>语句块外部是访问不到这些函数的。</p>
+<pre><code>$C(function(){
+    var obj_1 = { a:{b:1}, c:[1,2,3] };
+    var obj_2 = { a:{b:1}, c:[1,2,3] };
+    console.log( obj_1 === obj_2 );     /* return false; */
+    console.log( obj_1.$equal(obj_2) );  /* return true; */
+});
+console.log( [].$equal([]) ); /* TypeError: undefined is not a function */
+</code></pre>
+
+<h4 id="2">问题2: 代码可能向上不兼容</h4>
+<p>如果目前Cherry.js实现的方法未来与ECMAScript新标准中涵盖的方法重名了，那原来写的代码可能就向上不兼容了。举个例子会比较直观，假设Cherry.js实现了一个<code>String.prototype.at</code>方法，然后用户在自己的代码中使用了这个方法。ECMAScript 7却也实现有那么一个<code>String.prototype.at</code>方法，这样不就会覆盖ES标准本身的实现了吗？如果这些方法还是<code>writable: false</code>的，还会报错！</p>
+<p><strong>Cherry.js的解决手段是：给所有的方法加上<code>$</code>前缀</strong>。可以看到所有的Cherry.js方法都有这么一个前缀。ES标准一般不会使用这样的命名方法，所以这样就可以大胆放心地使用Cherry.js啦！</p>
+<h4 id="3-bug">问题3: 出了Bug不太好定位问题</h4>
+<p>我们一直在致力于完善Cherry.js的文档，以及错误处理机制。</p>
 </div>
             
         </div>
