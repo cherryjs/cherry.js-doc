@@ -12,4 +12,5 @@ Cherry.js的实现在很多地方参考了[underscore.js](https://github.com/jas
 - @Jerry Zou: 一个热爱JavaScript的前端工程师
 	- [zry656565@gmail.com](mailto:zry656565@gmail.com)
 	- [http://jerryzou.com](http://jerryzou.com)
-- @zlqy386
+- @zlqy386:
+	- [zy3861@163.com](mailto:zy3861@163.com)
