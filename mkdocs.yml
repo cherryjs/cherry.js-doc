@@ -9,7 +9,7 @@ theme_dir: theme/cherry
 pages:
 - ['index.md']
 - ['examples.md', '简单的例子']
-- ['suggestion.md', '详说Cherry.js']
+- ['detail.md', '详说Cherry.js']
 # - ['method/array.md', '详细文档', 'Array']
 # - ['method/object.md', '详细文档', 'Object']
 # - ['method/string.md', '详细文档', 'String']
