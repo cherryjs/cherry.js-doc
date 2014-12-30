@@ -1,3 +1,7 @@
+duoshuo: 1003
+title: 简单的例子
+url: /example
+
 ## Array
 ### Array.$swap(index1, index2)
 接受两个数组索引作为参数，将this数组中对应的元素进行交换位置，返回值即这个数组本身。

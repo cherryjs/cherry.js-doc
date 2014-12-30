@@ -1,3 +1,7 @@
+duoshuo: 1002
+title: license
+url: /license
+
 ##本项目遵循的开源协议
 
 本项目遵循 MIT 协议。

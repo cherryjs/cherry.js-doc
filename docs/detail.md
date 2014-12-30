@@ -1,3 +1,7 @@
+duoshuo: 1004
+title: 详述cherry.js
+url: /detail
+
 ## Cherry.js
 
 Cherry.js是一个扩展了内置对象prototype的工具库。但它不同于Prototype.js，它仅仅在JavaScript本身的语言层面上进行扩展，而并不去关心JavaScript以外的东西，比如DOM。
