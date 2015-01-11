@@ -13,5 +13,6 @@ pages:
 # - ['method/array.md', '详细文档', 'Array']
 # - ['method/object.md', '详细文档', 'Object']
 # - ['method/string.md', '详细文档', 'String']
+- ['error.md', '错误类型']
 - ['about.md', '关于', 'Cherry.js的诞生']
 - ['license.md', '关于', '开源协议']
