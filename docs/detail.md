@@ -47,49 +47,12 @@ console.log( obj1.$equal(obj2) );
 
 关于该问题最初的讨论来自于 [知乎 | 为什么不要直接在Object.prototype上定义方法？](http://www.zhihu.com/question/26924011)
 
-#### 问题1: 侵入内置对象，造成维护紊乱
-
-由于直接在内置对象的prototype上定义方法，所有用户声明的对象或者变量都会带有这些函数。如果处理得不好，也会给`for-in`循环带来一些麻烦。
-
-```
-Object.prototype.sample = function() {};
-var obj = {};
-for (var attr in obj) {
-    ... //可以访问到sample
-}
-```
-
-**Cherry.js的解决手段：使用`defineProperties()`来定义方法**，暂时放弃兼容低版本浏览器（比如IE8-，关于浏览器支持的更多信息请参考首页中的列表）。这样就可以防止在`for-in`循环中被枚举到了。
-
-```
-Object.prototype.defineProperties({
-    "sample": {
-        enumerable: false,
-        configurable: false,
-        writable: true,
-        value: ...
-    },
-    ...
-});
-```
-
-另外Cherry.js也提供了一种屏蔽机制。只有在`$C`语句块中才能使用Cherry.js提供的方法。而在`$C`语句块外部是访问不到这些函数的。
-```
-$C(function(){
-    var obj_1 = { a:{b:1}, c:[1,2,3] };
-    var obj_2 = { a:{b:1}, c:[1,2,3] };
-    console.log( obj_1 === obj_2 );     /* return false; */
-    console.log( obj_1.$equal(obj_2) );  /* return true; */
-});
-console.log( [].$equal([]) ); /* TypeError: undefined is not a function */
-```
-
-#### 问题2: 代码可能向上不兼容
+#### 问题1: 代码可能向上不兼容
 
 如果目前Cherry.js实现的方法未来与ECMAScript新标准中涵盖的方法重名了，那原来写的代码可能就向上不兼容了。举个例子会比较直观，假设Cherry.js实现了一个`String.prototype.at`方法，然后用户在自己的代码中使用了这个方法。ECMAScript 7却也实现有那么一个`String.prototype.at`方法，这样不就会覆盖ES标准本身的实现了吗？如果这些方法还是`writable: false`的，还会报错！
 
 **Cherry.js的解决手段是：给所有的方法加上`$`前缀**。可以看到所有的Cherry.js方法都有这么一个前缀。ES标准一般不会使用这样的命名方法，所以这样就可以大胆放心地使用Cherry.js啦！
 
-#### 问题3: 出了Bug不太好定位问题
+#### 问题2: 出了Bug不太好定位问题
 
 我们一直在致力于完善Cherry.js的文档，以及错误处理机制。
