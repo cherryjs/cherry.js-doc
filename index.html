@@ -132,26 +132,14 @@
 <pre><code>&lt;script src="./cherry.min.js"&gt;&lt;/script&gt;
 </code></pre>
 <p>接下来，享受 cherry.js 吧～</p>
-<pre><code>$C(function(){
-    var arr = ['a','b','c','d'];
-    arr.$swap(0,2);
-    console.log(arr); //return ['c','b','a','d'];
+<pre><code>var arr = ['a','b','c','d'];
+arr.$swap(0,2);
+console.log(arr); //return ['c','b','a','d'];
 
-    var obj_1 = { a:{b:1}, c:[1,2,3] };
-    var obj_2 = { a:{b:1}, c:[1,2,3] };
-    console.log( obj_1 === obj_2 );     //return false;
-    console.log( obj_1.$equal(obj_2) );  //return true;
-});
-</code></pre>
-<p><code>$C</code>是在 cherry.js 中使用的唯一一个全局变量。像<code>$C(function(){...})</code>这样的语句块你一定不会陌生，这里我们称之为 Cherry 语句块。在 Cherry 语句块中，你可以尽情使用 cherry.js 所提供的库函数，而在 Cherry 语句块外，那些库函数就消失地无影无踪了。</p>
-<p>Cherry.js 中库函数一般的命名规则是：<strong><code>XXX.prototype.$xxx</code></strong>。所以你所使用的其他库如果不会与这样的写法冲突的话，比较推荐以下写法： </p>
-<pre><code>$C.bind();
-/*
- * do anything you want with cherry.js
- */
-
-//And ... when you don't want to use cherry any more, you can call `$C.unbind()`
-$C.unbind();
+var obj_1 = { a:{b:1}, c:[1,2,3] };
+var obj_2 = { a:{b:1}, c:[1,2,3] };
+console.log( obj_1 === obj_2 );     //return false;
+console.log( obj_1.$equal(obj_2) );  //return true;
 </code></pre>
 <h3 id="_1">浏览器支持</h3>
 <ul>
@@ -167,13 +155,11 @@ $C.unbind();
 <pre><code>npm install --save-dev cherry.js
 </code></pre>
 <h4 id="c">声明$C</h4>
-<pre><code>var $C = require('cherry.js');
+<pre><code>require('cherry.js');
 
-$C(function(){
-    var arr = ['a','b','c','d'];
-    arr.$swap(0,2);
-    console.log(arr); //return ['c','b','a','d'];
-});
+var arr = ['a','b','c','d'];
+arr.$swap(0,2);
+console.log(arr); //return ['c','b','a','d'];
 </code></pre>
 
 

@@ -144,67 +144,51 @@
 <h2 id="array">Array</h2>
 <h3 id="arrayswapindex1-index2">Array.$swap(index1, index2)</h3>
 <p>接受两个数组索引作为参数，将this数组中对应的元素进行交换位置，返回值即这个数组本身。</p>
-<pre><code>$C(function(){
-  var arr = [1,2,3];
-  arr.$swap(0,2);
-  console.log(arr);  //[3,2,1];
-});
+<pre><code>var arr = [1,2,3];
+arr.$swap(0,2);
+console.log(arr);  //[3,2,1];
 </code></pre>
 <h3 id="arrayintersectarr">Array.$intersect(arr)</h3>
 <p>接受一个数组参数，并返回它与这个数组的交集。</p>
-<pre><code>$C(function(){
-  var arr = [1, 2, 3];
-  arr.$intersect([3, 2, 4]); //[2, 3]
-});
+<pre><code>var arr = [1, 2, 3];
+arr.$intersect([3, 2, 4]); //[2, 3]
 </code></pre>
 <h3 id="arrayunitearr">Array.$unite(arr)</h3>
 <p>接受一个数组参数，并返回它与这个数组的并集。</p>
-<pre><code>$C(function(){
-  var arr = [1, 2, 3];
-  arr.$unite([2, 4, 1]); //[1, 2, 3, 4]
-});
+<pre><code>var arr = [1, 2, 3];
+arr.$unite([2, 4, 1]); //[1, 2, 3, 4]
 </code></pre>
 <h2 id="object">Object</h2>
 <h3 id="objectclone">Object.$clone()</h3>
 <p>将产生一个该对象的副本，并返回出来。</p>
-<pre><code>$C(function(){
-  var a = {b:1};
-  var x = a.$clone(); // &lt;x&gt; is a duplicate of &lt;a&gt;
-  x.b = 2;
-  console.log(a.b);  //return 1; because the change on &lt;x&gt; will not affect &lt;a&gt;.
-});
+<pre><code>var a = {b:1};
+var x = a.$clone(); // &lt;x&gt; is a duplicate of &lt;a&gt;
+x.b = 2;
+console.log(a.b);  //return 1; because the change on &lt;x&gt; will not affect &lt;a&gt;.
 </code></pre>
 <h3 id="objectequalobj">Object.$equal(obj)</h3>
 <p>将该对象与obj相比较，如果两者具有相同的属性，并且对应的属性值相同，那么该函数会返回true。</p>
-<pre><code>$C(function(){
-  var obj_1 = { a:{b:1}, c:[1,2,3] };
-  var obj_2 = { a:{b:1}, c:[1,2,3] };
-  console.log( obj_1===obj_2 );       //return false;
-  console.log( obj_1.$equal(obj_2) );  //return true;
-});
+<pre><code>var obj_1 = { a:{b:1}, c:[1,2,3] };
+var obj_2 = { a:{b:1}, c:[1,2,3] };
+console.log( obj_1===obj_2 );       //return false;
+console.log( obj_1.$equal(obj_2) );  //return true;
 </code></pre>
 <h3 id="objectdebugmessage">Object.$debug(message)</h3>
 <p>提供了一种使debug更顺畅的方法。</p>
-<pre><code>$C(function(){
-  var t = 100;
-  //...
-  t.$debug("t...");  //console print: Debug Message: t..., Value: 100
-});
+<pre><code>var t = 100;
+//...
+t.$debug("t...");  //console print: Debug Message: t..., Value: 100
 </code></pre>
 <h2 id="string">String</h2>
 <h3 id="stringtrim">String.$trim()</h3>
 <p>移除该字符串头尾的空字符。</p>
-<pre><code>$C(function(){
-    var str = "     hello world    ";
-    console.log(str.trim()); //"hello world"
-})
+<pre><code>var str = "     hello world    ";
+console.log(str.trim()); //"hello world"
 </code></pre>
 <h3 id="stringremovespace">String.$removeSpace()</h3>
 <p>移除字符串中所有的空字符。</p>
-<pre><code>$C(function(){
-    var str = "hello world ! ! !";
-    console.log(str.$removeSpace()); //"helloworld!!!"
-})
+<pre><code>var str = "hello world ! ! !";
+console.log(str.$removeSpace()); //"helloworld!!!"
 </code></pre>
 
 
